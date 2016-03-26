@@ -67,6 +67,9 @@ def main(args):
     jpeg_files = glob.glob(jpeg_string)
     raw_files = glob.glob(raw_string)
 
+    if len(raw_files) == 0:
+        log.info('No RAW files found, aborting.')
+        sys.exit(0)
 
     #get sizes at play here
     jpeg_size = 0
